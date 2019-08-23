@@ -5,14 +5,7 @@ import * as http from "http";
 const app = express();
 export const App = app;
 const server = http.createServer(app);
-const io = require("socket.io")(server);
 export const Server = server;
-
-// Dependencies
-// ----------------------------------------------------------------------------
-import * as mongoose from "mongoose";
-// import * as passport from "passport";
-// export const Passport = passport;
 
 // Utilities
 // ----------------------------------------------------------------------------

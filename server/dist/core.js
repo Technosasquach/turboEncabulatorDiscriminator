@@ -7,10 +7,7 @@ const http = require("http");
 const app = express();
 exports.App = app;
 const server = http.createServer(app);
-const io = require("socket.io")(server);
 exports.Server = server;
-// import * as passport from "passport";
-// export const Passport = passport;
 // Utilities
 // ----------------------------------------------------------------------------
 const compression = require("compression");
