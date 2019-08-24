@@ -25,7 +25,13 @@ export const WordsTechnoBabbleProNouns: string[] = [
     "Core", 
     "Driver", 
     "Injector", 
-    "Oscillator"
+    "Oscillator",
+    "Processor",
+    "Stabiliser",
+    "RM-Motor",
+    "Matrix",
+    "Resonator"
+
 ];
 
 export const WordsTechnoBabbleDescription: string[] = [
@@ -66,7 +72,13 @@ export const WordsTechnoBabbleDescription: string[] = [
     "Secondary", 
     "Backup", 
     "Control", 
-    "Optical" 
+    "Optical",
+    "Recalibrated",
+    "Spectral",
+    "Wide-band",
+    "Dynamic",
+    "Parallel",
+    
 ];
 
 export const WordsCar: string[] = [
