@@ -77,8 +77,8 @@ export const WordsTechnoBabbleDescription: string[] = [
     "Spectral",
     "Wide-band",
     "Dynamic",
-    "Parallel",
-    
+    "Parallel"
+
 ];
 
 export const WordsCar: string[] = [
