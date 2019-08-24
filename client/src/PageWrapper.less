@@ -19,7 +19,21 @@
     height: 100vh;
     width: 100vw;
     position: fixed;
-    background-color: @colour-main;
+    
+    //background-image: url(https://1.bp.blogspot.com/-yKEAF3_6s44/TqSETu8GJPI/AAAAAAAADnA/xV1J0fLjick/s1600/Gear_Metal_Mechanic_Steel_Wallpaper_Vvallpaper.Net.jpg);
+    background: linear-gradient(
+            fade(@colour-black, 20%),
+            fade(@colour-black, 20%)
+            ),url(https://res.cloudinary.com/peerspace-inc/image/upload/cl42ocgzwzrv1kidzvx9.jpg);
+    background-color: @colour-light;
+    background-position: center;
+    background-size: cover;
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
 
     display: flex;
     align-items: left;
