@@ -6,28 +6,35 @@ import { AnswerBox } from "./AnswerBox";
 import { QuestionBox } from "./QuestionBox"; 
 import { LoadingBox } from "./LoadingBox";
 
-import { IQuestion, EQuestionType } from "./content/questions"; 
+import { Questions, IQuestion, EQuestionType } from "./content/questions"; 
 
 const axios = require("axios");
 
 import "./index.less";
 
-export default class Root extends React.Component<any, {questions: IQuestion, answers: any, result: {text: string, quote: string}}> {
+export default class Root extends React.Component<any, {question: IQuestion, currentQuestion: number, showPage: number, result: {text: string, quote: string}}> {
+
+
+    // CONFIG
+    numberOfQuestions = 10;
+    shuffledQuestions = this.shuffle(Questions);
 
     constructor(props: any) {
         super(props);
         this.state = {
-            questions: {
+            question: {
                 question: "Have you driven on a full moon recently?",
                 type: EQuestionType.Bool
             },
-            answers: null,
+            currentQuestion: 0,
             result: {
                 text: "Loading...",
                 quote: ""
-            }
+            },
+            showPage: 1
         }
         this.finishedQuestion = this.finishedQuestion.bind(this);
+        this.finishedLoading = this.finishedLoading.bind(this);
     }
 
     componentDidMount() {
@@ -39,8 +46,36 @@ export default class Root extends React.Component<any, {questions: IQuestion, an
         console.log("[CORE] React will load");
     }
     
-    finishedQuestion(e: Event) {
-        e.preventDefault()
+    finishedQuestion(result: { answer: string }) {
+        // e.preventDefault()
+        this.setState({
+            currentQuestion: this.state.currentQuestion + 1
+        })
+        
+        if(this.state.currentQuestion >= 10) {
+            this.setState({
+                showPage: 2
+            });
+        } else {
+            // Return a new question
+            if(this.shuffledQuestions[this.state.currentQuestion - 1].followup && result.answer == "yes") {
+                // Follow up question exists
+                this.setState({
+                    question: this.shuffledQuestions[this.state.currentQuestion - 1].followup
+                })
+            } else {
+                this.setState({
+                    question: this.shuffledQuestions[this.state.currentQuestion]
+                })
+            }
+            
+        }
+    }
+
+    finishedLoading() {
+        this.setState({
+            showPage: 3
+        });
     }
 
     requestResult() {
@@ -54,30 +89,35 @@ export default class Root extends React.Component<any, {questions: IQuestion, an
         })
     }
 
-    questionToSend: IQuestion = {
-        question: "When did you last check your tire pressure?",
-        type: EQuestionType.Multi,
-        content: [
-            "Last Day",
-            "Last Week",
-            "Last Month",
-            "Never",
-            "My tires are pressurized?!"
-        ]
-    }
-
     render() {
         return (
             <PageWrapper>
-                <QuestionBox a={{ questionJSON: this.questionToSend,
-                    currentQuestion: 3,
-                    maxQuestions: 10,
+                { this.state.showPage == 1 ? <QuestionBox a={{ questionJSON: this.state.question,
+                    currentQuestion: this.state.currentQuestion,
+                    maxQuestions: this.numberOfQuestions,
                     callBack: this.finishedQuestion
-                }}/>
-                <AnswerBox a={{text: this.state.result.text, quote: this.state.result.quote }}/>
-                <LoadingBox/>
+                }}/> : undefined }
+                { this.state.showPage == 2 ? <AnswerBox a={{text: this.state.result.text, quote: this.state.result.quote }}/> : undefined }
+                { this.state.showPage == 3 ? <LoadingBox/> : undefined }
             </PageWrapper>
         );
+    }
+
+    shuffle(array: any[]): any[] {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+        
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+        
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
     }
 }
 
