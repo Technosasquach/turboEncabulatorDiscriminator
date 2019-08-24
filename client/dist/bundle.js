@@ -86,6 +86,169 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/src/PageWrapper.less":
+/*!*************************************!*\
+  !*** ./client/src/PageWrapper.less ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/less-loader/dist/cjs.js!./PageWrapper.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./client/src/PageWrapper.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./client/src/PageWrapper.tsx":
+/*!************************************!*\
+  !*** ./client/src/PageWrapper.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+__webpack_require__(/*! ./PageWrapper.less */ "./client/src/PageWrapper.less");
+var PageWrapper = /** @class */ (function (_super) {
+    __extends(PageWrapper, _super);
+    function PageWrapper() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    PageWrapper.prototype.render = function () {
+        return (React.createElement("div", { className: "pageWrapper" },
+            React.createElement("div", { className: "pageDecoration" },
+                React.createElement("h1", { id: "title" }, "Turbo Encabulator Discriminator")),
+            React.createElement("div", { className: "pageContent" }, this.props.children)));
+    };
+    return PageWrapper;
+}(React.Component));
+exports.PageWrapper = PageWrapper;
+
+
+/***/ }),
+
+/***/ "./client/src/QuestionBox.less":
+/*!*************************************!*\
+  !*** ./client/src/QuestionBox.less ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/less-loader/dist/cjs.js!./QuestionBox.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./client/src/QuestionBox.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./client/src/QuestionBox.tsx":
+/*!************************************!*\
+  !*** ./client/src/QuestionBox.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+__webpack_require__(/*! ./QuestionBox.less */ "./client/src/QuestionBox.less");
+var QuestionBox = /** @class */ (function (_super) {
+    __extends(QuestionBox, _super);
+    function QuestionBox() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    QuestionBox.prototype.render = function () {
+        return (React.createElement("div", { className: "questionBox" },
+            React.createElement("div", { className: "questions" },
+                React.createElement("ul", { id: "questionNumbers" },
+                    React.createElement("li", null, "Coffee"),
+                    React.createElement("li", null, "Tea"),
+                    React.createElement("li", null, "Milk"))),
+            React.createElement("h1", null, "QuestionBox")));
+    };
+    return QuestionBox;
+}(React.Component));
+exports.QuestionBox = QuestionBox;
+
+
+/***/ }),
+
 /***/ "./client/src/index.less":
 /*!*******************************!*\
   !*** ./client/src/index.less ***!
@@ -148,7 +311,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+var PageWrapper_1 = __webpack_require__(/*! ./PageWrapper */ "./client/src/PageWrapper.tsx");
+//import { AnswerBox } from "./AnswerBox";
+var QuestionBox_1 = __webpack_require__(/*! ./QuestionBox */ "./client/src/QuestionBox.tsx");
+//import { LoadingBox } from "./LoadingBox";
 __webpack_require__(/*! ./index.less */ "./client/src/index.less");
 var Root = /** @class */ (function (_super) {
     __extends(Root, _super);
@@ -162,12 +328,51 @@ var Root = /** @class */ (function (_super) {
         console.log("[CORE] React will load");
     };
     Root.prototype.render = function () {
-        return (React.createElement("h1", null, "turboEncabulatorDiscriminator"));
+        return (React.createElement(PageWrapper_1.PageWrapper, null,
+            React.createElement(QuestionBox_1.QuestionBox, null)));
     };
     return Root;
 }(React.Component));
 exports.default = Root;
 react_dom_1.render(React.createElement(Root, null), document.getElementById("root"));
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./client/src/PageWrapper.less":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./client/src/PageWrapper.less ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n.pageWrapper {\n  height: 100vh;\n  width: 100vw;\n  position: absolute;\n}\n.pageDecoration {\n  height: 100vh;\n  width: 100vw;\n  position: fixed;\n  background-color: #003C71;\n  display: flex;\n  align-items: left;\n  justify-content: top;\n}\n.pageContent {\n  height: 100vh;\n  width: 100vw;\n  position: fixed;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n#title {\n  font-family: 'Times New Roman', Times, serif;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./client/src/QuestionBox.less":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./client/src/QuestionBox.less ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".questionBox {\n  width: 60%;\n  height: 60%;\n  background-color: #576871;\n  border-radius: 5px;\n}\n#questionNumbers {\n  list-style-type: none;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
