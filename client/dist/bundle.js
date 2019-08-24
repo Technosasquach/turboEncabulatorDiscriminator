@@ -237,9 +237,9 @@ var QuestionBox = /** @class */ (function (_super) {
         return (React.createElement("div", { className: "questionBox" },
             React.createElement("div", { className: "questions" },
                 React.createElement("ul", { id: "questionNumbers" },
-                    React.createElement("li", null, "Coffee"),
-                    React.createElement("li", null, "Tea"),
-                    React.createElement("li", null, "Milk"))),
+                    React.createElement("li", null, "1"),
+                    React.createElement("li", null, "2"),
+                    React.createElement("li", null, "3"))),
             React.createElement("h1", null, "QuestionBox")));
     };
     return QuestionBox;

@@ -9,9 +9,9 @@ export class QuestionBox extends React.Component<any, any> {
             <div className="questionBox">
                 <div className="questions">
                     <ul id="questionNumbers">
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
                     </ul>
                 </div>
                 <h1>QuestionBox</h1>
