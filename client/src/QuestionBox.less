@@ -4,11 +4,6 @@
 .questionBox {
     width: 60%;
     //height: 60%;
-    //background-color: @colour-grey;
-    //border-radius: 5px;
-    //background-color: @colour-silversand;
-    //background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/interlaced.png');
-    //background-size: cover;
 }
 
 .questionBoxContent {
@@ -30,29 +25,34 @@
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .textSection {
     background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/interlaced.png');
     background-size: cover;
+    padding-bottom: 5rem;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
 }
 
 .passedQuestion {
-    color: @colour-grey;
-    
+    color: rgb(184, 184, 184);  
 }
 
 .futureQuestion {
-    color: red;
+    color: black;
 }
 
 .currentQuestion {
-    color: purple;
+    color: #4ca2cb;
     font-weight: 900;
+    text-decoration: underline;
 }
 
 .question {
@@ -76,10 +76,23 @@ textarea {
     height: 5rem;
 }
 
+label {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: left;
+    //text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    width: 100%;
+}
+
 .buttonCont {
-    position: fixed;
-    bottom: 21%;
-    right: 21%; 
+    float: right;
+    margin-top: 15px;
 }
 
 // Button

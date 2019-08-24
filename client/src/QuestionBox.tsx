@@ -16,8 +16,6 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
         this.questionClass = this.questionClass.bind(this);
     }
 
-    //question = this.props.questionJSON;
-
     handleOptionChange(changeEvent: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
             selectedOption: changeEvent.target.value
