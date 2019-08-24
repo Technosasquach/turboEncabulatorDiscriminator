@@ -4,5 +4,39 @@
 .answerBox {
     width: 70%;
     height: 50%;
-    background-color: @colour-grey;
+    background-color: @colour-light;
+    border-radius: 5px;
+    //background-color: @colour-silversand;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/interlaced.png');
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+
+    .left {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        span {
+            font-size: 2rem;
+        }
+    }
+    
+    .right {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .thingContainer {
+
+        }
+    }
 }
