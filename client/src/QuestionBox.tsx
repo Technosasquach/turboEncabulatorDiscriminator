@@ -4,18 +4,18 @@ import { EQuestionType, IQuestion } from "./content/questions";
 
 import "./QuestionBox.less";
 
-export class QuestionBox extends React.Component<{ questionJSON: IQuestion/*, currentQuestion: number, maxQuestions: number, callBack: Function*/ }, { selectedOption: string }> {
+export class QuestionBox extends React.Component<{ /*questionJSON: IQuestion, currentQuestion: number, maxQuestions: number, callBack: Function*/ }, { selectedOption: string }> {
     
     constructor(props: any) {
         super(props);
         this.state = {
-            selectedOption: ""
+            selectedOption: "",
         };
         this.handleOptionChange = this.handleOptionChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
-    question = this.props.questionJSON;
+    //question = this.props.questionJSON;
 
     handleOptionChange(changeEvent: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
@@ -27,6 +27,19 @@ export class QuestionBox extends React.Component<{ questionJSON: IQuestion/*, cu
         e.preventDefault();
         console.log('The next button was clicked.');
         //this.props.callBack({ anwser: "HelloWorld" })
+    }
+
+    question: IQuestion = {
+        question: "Do you follow any of the current faiths?",
+        type: EQuestionType.Multi,
+        content: [
+            "Flying Spagetti Monster",
+            "Satanism",
+            "Voodoo",
+            "Heka (Ancient Egyption Gods)",
+            "Jediism",
+            "N/A",
+        ]
     }
     
     numberQuestions = 5;
@@ -49,7 +62,7 @@ export class QuestionBox extends React.Component<{ questionJSON: IQuestion/*, cu
                                 return (
                                     <div> 
                                         <form>
-                                            { (this.question.content || ["error"]).map((choiceValue) => {
+                                            { (this.question.content || ["hello"]).map((choiceValue) => {
                                                 return ( <div className="form-check">
                                                     <label>
                                                         <input
