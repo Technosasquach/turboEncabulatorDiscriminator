@@ -35,18 +35,6 @@ app.use(cookieParser());
 // Mounts the session store with an auto loader into MongooseDB
 // const MongoStore = require("connect-mongo")(session);
 // Allows the session storage to be put into mongoose
-// app.use(session({
-//     resave: true,
-//     saveUninitialized: true,
-//     secret: "above22watersessionsecret",
-//     store: new MongoStore({
-//         host: "127.0.0.1",
-//         port: "27017",
-//         db: "session",
-//         url: "mongodb://localhost:27017/above22water",
-//         autoReconnect: true
-//     })
-// }));
 // Starts the user account session
 // app.use(passport.initialize());
 // app.use(passport.session());
@@ -75,6 +63,3 @@ import { Request, Response } from "express";
 app.get("/**/", (req: Request, res: Response) => {
     res.sendFile(path.resolve(__dirname, "./../../client/dist/index.html"));
 });
-
-
-

@@ -1,0 +1,41 @@
+@import "./core.less";
+@import "./variables.less";
+
+// "Reset" page
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+.pageWrapper {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    //background-color: @colour-main;
+}
+
+.pageDecoration {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: @colour-main;
+
+    display: flex;
+    align-items: left;
+    justify-content: top;
+}
+
+.pageContent {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    font-family: 'Times New Roman', Times, serif;
+}
