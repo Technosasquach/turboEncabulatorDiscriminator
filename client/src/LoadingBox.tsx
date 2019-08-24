@@ -2,19 +2,16 @@ import * as React from "react";
 
 import "./LoadingBox.less";
 
-let loadingText:Array<string>;
-loadingText = ["Talking to our technicians", "Looking at your data", "Reversing the Polarity", "We're docking the phaser"];
+import { LoaderMessages } from "./content/loadingMessages";
 
-let randomItem:string;
-randomItem = "hello";
-
-export class LoadingBox extends React.Component<any, any> {
+export class LoadingBox extends React.Component<any, { percentage: number, text: string }> {
 
     constructor(props:any) {
         super(props)
         
         this.state = {
-          percentage: 0
+          percentage: 0,
+          text: ""
         }
         
         this.nextStep = this.nextStep.bind(this)
@@ -43,8 +40,7 @@ export class LoadingBox extends React.Component<any, any> {
 
     changeText()
     {
-        randomItem = loadingText[Math.floor(Math.random()*loadingText.length)];
-        document.getElementsByTagName("span")[0].innerHTML = randomItem;
+        this.setState({ text: LoaderMessages.getRandomMessage()});
     }
 
     render() {
@@ -52,7 +48,7 @@ export class LoadingBox extends React.Component<any, any> {
             <div className="loadingBox">
                 <h1>Loading Encabulator...</h1>
                 <ProgressBar percentage={this.state.percentage} />
-                <span className = "task"></span>
+                <span className = "loadComment">{this.state.text}</span>
             </div>
         );
     }
@@ -63,7 +59,6 @@ const ProgressBar = (props:any) => {
     return (
         <div className="progress-bar">
             <Filler percentage={props.percentage}/>
-
         </div>
     )
 }
