@@ -38,7 +38,7 @@ export const Questions: IQuestion[] = [
         type: EQuestionType.Short
     },
     {
-        question: "If there is a sound, dose it sound like a dead relative?",
+        question: "If there is a sound, does it sound like a dead relative?",
         type: EQuestionType.Short
     },
     {

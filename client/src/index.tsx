@@ -6,7 +6,7 @@ import { AnswerBox } from "./AnswerBox";
 import { QuestionBox } from "./QuestionBox"; 
 import { LoadingBox } from "./LoadingBox";
 
-import { Questions, IQuestion, EQuestionType } from "./content/questions"; 
+import { Questions, IQuestion } from "./content/questions"; 
 
 const axios = require("axios");
 
@@ -22,10 +22,7 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
     constructor(props: any) {
         super(props);
         this.state = {
-            question: {
-                question: "Have you driven on a full moon recently?",
-                type: EQuestionType.Bool
-            },
+            question: this.shuffledQuestions[0],
             currentQuestion: 0,
             result: {
                 text: "Loading...",
@@ -51,11 +48,16 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
         this.setState({
             currentQuestion: this.state.currentQuestion + 1
         })
-        
+        console.log("Current Question: " + this.state.currentQuestion);
         if(this.state.currentQuestion >= 10) {
             this.setState({
                 showPage: 2
             });
+            setTimeout(() => {
+                this.setState({
+                    showPage: 3
+                });
+            }, 4000);
         } else {
             // Return a new question
             if(this.shuffledQuestions[this.state.currentQuestion - 1].followup && result.answer == "yes") {
@@ -92,13 +94,20 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
     render() {
         return (
             <PageWrapper>
-                { this.state.showPage == 1 ? <QuestionBox a={{ questionJSON: this.state.question,
-                    currentQuestion: this.state.currentQuestion,
-                    maxQuestions: this.numberOfQuestions,
-                    callBack: this.finishedQuestion
+                { this.state.showPage == 1 ? 
+                    <QuestionBox a={{ 
+                        questionJSON: this.state.question,
+                        currentQuestion: this.state.currentQuestion,
+                        maxQuestions: this.numberOfQuestions,
+                        callBack: this.finishedQuestion
                 }}/> : undefined }
-                { this.state.showPage == 2 ? <AnswerBox a={{text: this.state.result.text, quote: this.state.result.quote }}/> : undefined }
-                { this.state.showPage == 3 ? <LoadingBox/> : undefined }
+                { this.state.showPage == 3 ? 
+                    <AnswerBox a={{
+                        text: this.state.result.text, 
+                        quote: this.state.result.quote 
+                }}/> : undefined }
+                { this.state.showPage == 2 ? 
+                    <LoadingBox/> : undefined }
             </PageWrapper>
         );
     }
