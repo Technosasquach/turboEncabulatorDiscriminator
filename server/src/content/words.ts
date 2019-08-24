@@ -13,7 +13,19 @@ export const WordsTechnoBabbleProNouns: string[] = [
     "Encabulator",
     "Conductor",
     "Drive",
-    "Wayne Shaft"
+    "Wayne Shaft",
+    "Manifold", 
+    "Resistor", 
+    "Amplifier", 
+    "Canister", 
+    "Capacitor", 
+    "Coil", 
+    "Circut", 
+    "Conduit", 
+    "Core", 
+    "Driver", 
+    "Injector", 
+    "Oscillator"
 ];
 
 export const WordsTechnoBabbleDescription: string[] = [
@@ -38,6 +50,23 @@ export const WordsTechnoBabbleDescription: string[] = [
     "Potted",
     "Electrolydic",
     "Thin film",
+    "Analog", 
+    "Asynchronous", 
+    "Real-time", 
+    "Nested", 
+    "RS-232", 
+    "Augmented", 
+    "Auxiliary", 
+    "Artificial", 
+    "Harmonic", 
+    "Insulated", 
+    "Magnetic", 
+    "Modulated", 
+    "Primary", 
+    "Secondary", 
+    "Backup", 
+    "Control", 
+    "Optical" 
 ];
 
 export const WordsCar: string[] = [
