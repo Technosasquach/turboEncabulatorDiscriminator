@@ -39,6 +39,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
     }
 
     numQuestions = Array.from(Array(this.props.a.maxQuestions).keys());
+    //[...Array(this.props.a.maxQuestions+1).keys()].slice(1)
 
     render() {
         return (
@@ -47,7 +48,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                     <div className="questionNumbers">  
 
                         { this.numQuestions.map((number) => {
-                            return <div className={this.questionClass(number+1)}>{number+1}</div>
+                            return <div className={this.questionClass(number)}>{number+1}</div>
                         })}   
                     </div>
                     <div className="textSection">
@@ -63,7 +64,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                             <form>
                                                 { (this.props.a.questionJSON.content || ["hello"]).map((choiceValue) => {
                                                     return ( <div className="form-check">
-                                                        <label>
+                                                        <label className="container">
                                                             <input
                                                                 type="radio"
                                                                 name="multiChoice"
@@ -73,6 +74,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                                                 className="form-check-input"
                                                             />
                                                             {choiceValue}
+                                                            <span className="checkmark"></span>
                                                         </label>
                                                     </div> )
                                                 })}                         
@@ -83,7 +85,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                     return (
                                         <div className="numericalAnswer">
                                             <form>
-                                                <input type="text" name="number"/>                                      
+                                                <input type="text" className="numericalQuestion" name="number"/>                                    
                                             </form>
                                         </div>
                                     );
@@ -91,8 +93,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                     return (
                                         <div className="shortAnswer">
                                             <form>
-                                                <textarea name="response">
-                                                    The cat was playing in the garden.
+                                                <textarea name="response" placeholder="Enter response...">
                                                 </textarea>                                          
                                             </form>
                                         </div>
@@ -102,7 +103,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                     <div> 
                                         <form>
                                             <div className="form-check">
-                                                <label>
+                                                <label className="container">Yes
                                                     <input
                                                         type="radio"
                                                         name="bool"
@@ -111,12 +112,13 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                                         onChange={this.handleOptionChange}
                                                         className="form-check-input"
                                                     />
-                                                    Yes
+                                                    <span className="checkmark"></span>
+                                        
                                                 </label>
                                             </div>
 
                                             <div className="form-check">
-                                                <label>
+                                                <label className="container">No
                                                     <input
                                                         type="radio"
                                                         name="bool"
@@ -125,7 +127,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                                         onChange={this.handleOptionChange}
                                                         className="form-check-input"
                                                     />
-                                                    No
+                                                    <span className="checkmark"></span>
                                                 </label>
                                             </div>
                                         </form>  
@@ -135,7 +137,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                     return null;
                             }
                         })()}
-
+                        
                         <div className="buttonCont">
                             <button className="btn" onClick={this.handleClick}>
                                 <span>Next</span>
