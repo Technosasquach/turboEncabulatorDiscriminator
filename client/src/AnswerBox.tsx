@@ -4,10 +4,15 @@ import { NameGen } from "./content/names";
 
 import "./AnswerBox.less";
 
-export class AnswerBox extends React.Component<{a: {text: any, quote: any}}, any> {
+export class AnswerBox extends React.Component<{a: {text: any, quote: any, returnFunc: Function}}, any> {
 
     constructor(props: any) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e: any) {
+        this.props.a.returnFunc();
     }
 
     render() {
@@ -23,8 +28,8 @@ export class AnswerBox extends React.Component<{a: {text: any, quote: any}}, any
                         <QuoteBox quote={this.props.a.quote}/>
                         <QuoteBox quote={this.props.a.quote}/>
                     </div>
-                    
                 </div>
+                <button className="restart" onClick={this.handleClick}>Restart</button>
             </div>
         );
     }

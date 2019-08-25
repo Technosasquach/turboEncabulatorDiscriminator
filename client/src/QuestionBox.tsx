@@ -25,6 +25,9 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
     handleClick(e: any) {
         //e.preventDefault();
         console.log('The next button was clicked.');
+        this.setState({
+            selectedOption: ""
+        });
         this.props.a.callBack({ answer: "HelloWorld" });
     }
 
@@ -48,7 +51,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                     <div className="questionNumbers">  
 
                         { this.numQuestions.map((number) => {
-                            return <div className={this.questionClass(number)}>{number+1}</div>
+                            return <div className={this.questionClass(number+1)}>{number+1}</div>
                         })}   
                     </div>
                     <div className="textSection">

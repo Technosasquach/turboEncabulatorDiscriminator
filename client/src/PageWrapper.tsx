@@ -2,16 +2,18 @@ import * as React from "react";
 
 import "./PageWrapper.less";
 
-export class PageWrapper extends React.Component<{returnFunc: Function}, any> {
+export class PageWrapper extends React.Component<{a: {returnFunc: Function}}, any> {
 
     constructor(props: any) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    // handleClick() {
-    //     this.props.returnFunc();
-    // }
+    handleClick(e: any) {
+        // e.preventDefault();
+        console.log("Hello World ");
+        this.props.a.returnFunc();
+    }
 
     render() {
         return (
@@ -20,7 +22,7 @@ export class PageWrapper extends React.Component<{returnFunc: Function}, any> {
                 <div className="pageForeground">
                     <div className="header">
                         <span>Turbo Encabulator Discriminator</span>
-                        <button className="restart" >Restart</button>
+                        <button className="restart" onClick={this.handleClick}>Restart</button>
                     </div>
                 </div>
                 <div className="pageContent">

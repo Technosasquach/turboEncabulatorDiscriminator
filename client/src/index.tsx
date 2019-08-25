@@ -23,7 +23,7 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
         super(props);
         this.state = {
             question: this.shuffledQuestions[0],
-            currentQuestion: 0,
+            currentQuestion: 1,
             result: {
                 text: "Loading...",
                 quote: ""
@@ -37,7 +37,6 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
 
     componentDidMount() {
         console.log("[CORE] React has loaded");
-        this.requestResult();
     }
 
     componentWillMount() {
@@ -54,6 +53,7 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
             this.setState({
                 showPage: 2
             });
+            this.requestResult();
             setTimeout(() => {
                 this.setState({
                     showPage: 3
@@ -61,17 +61,18 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
             }, 4000);
         } else {
             // Return a new question
-            if(this.shuffledQuestions[this.state.currentQuestion - 1].followup && result.answer == "yes") {
-                // Follow up question exists
-                this.setState({
-                    question: this.shuffledQuestions[this.state.currentQuestion - 1].followup
-                })
-            } else {
-                this.setState({
-                    question: this.shuffledQuestions[this.state.currentQuestion]
-                })
+            if(this.shuffledQuestions[this.state.currentQuestion - 1]) {
+                if(this.shuffledQuestions[this.state.currentQuestion - 1].followup && result.answer == "yes") {
+                    // Follow up question exists
+                    this.setState({
+                        question: this.shuffledQuestions[this.state.currentQuestion - 1].followup
+                    })
+                } else {
+                    this.setState({
+                        question: this.shuffledQuestions[this.state.currentQuestion]
+                    })
+                }
             }
-            
         }
     }
 
@@ -93,12 +94,21 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
     }
 
     restartQuiz() {
-        // console.log("Test");
+        this.shuffledQuestions = this.shuffle(Questions);
+        this.setState({
+            question: this.shuffledQuestions[0],
+            currentQuestion: 1,
+            result: {
+                text: "Loading...",
+                quote: ""
+            },
+            showPage: 1
+        });
     }
 
     render() {
         return (
-            <PageWrapper returnFunc={this.restartQuiz}>
+            <PageWrapper a={{returnFunc: this.restartQuiz}}>
                 { this.state.showPage == 1 ? 
                     <QuestionBox a={{ 
                         questionJSON: this.state.question,
@@ -109,7 +119,8 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
                 { this.state.showPage == 3 ? 
                     <AnswerBox a={{
                         text: this.state.result.text, 
-                        quote: this.state.result.quote 
+                        quote: this.state.result.quote,
+                        returnFunc: this.restartQuiz
                 }}/> : undefined }
                 { this.state.showPage == 2 ? 
                     <LoadingBox/> : undefined }

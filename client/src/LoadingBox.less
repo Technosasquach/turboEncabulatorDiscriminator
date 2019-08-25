@@ -30,5 +30,24 @@
         padding: 10px;
         overflow: visible;
     }
+
+    .restart {
+
+        border: 1px solid @colour-light;
+        padding: 6px 8px;
+        border-radius: 5px;
+        margin: 5px;
+        background-color: @colour-black;
+        color: @colour-light;
+        font-size: 0.8rem;
+
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+
+        &:hover {
+            background-color: lighten(@colour-black, 5);
+        }
+    }
 }
 

@@ -1,6 +1,8 @@
 @import "./core.less";
 @import "./variables.less";
 
+@navHeight: 50px;
+
 // "Reset" page
 * {
     box-sizing: border-box;
@@ -43,7 +45,9 @@
 }
 
 .pageContent {
-    height: 100vh;
+    top: @navHeight;
+    height: calc(100vh - @nav-size-height);
+    // height: 100vh;
     width: 100vw;
     position: fixed;
 
@@ -52,17 +56,12 @@
     justify-content: center;
 }
 
-.pageForeground{
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-}
-
 .header{
     overflow: hidden;
     width: 100%;
     background-color: @colour-black;
-    
+    height: @navHeight;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,7 +85,7 @@
         font-size: 0.8rem;
 
         &:hover {
-            background-color: @colour-main;
+            background-color: lighten(@colour-black, 5);
         }
     }
 
