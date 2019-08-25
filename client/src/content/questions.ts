@@ -14,7 +14,7 @@ export interface IQuestion {
 
 export const Questions: IQuestion[] = [
     {
-        question: "Have you driven on a full moon recently?",
+        question: "Have you driven during a full moon recently?",
         type: EQuestionType.Bool
     },
     {
@@ -139,9 +139,5 @@ export const Questions: IQuestion[] = [
             "I'm a monster",
             "None",
         ]
-    },
-    {
-        question: "How many times a day do you change radio stations?",
-        type: EQuestionType.Numerical,
     }
 ]
