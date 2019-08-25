@@ -18,11 +18,11 @@ export const Questions: IQuestion[] = [
         type: EQuestionType.Bool
     },
     {
-        question: "Have you performed a blood sacrifice to fix it?",
+        question: "Have you performed a blood sacrifice to try and fix it?",
         type: EQuestionType.Bool
     },
     {
-        question: "Have you driven near any indian burial sites recently?",
+        question: "Have you driven near any Indian burial sites recently?",
         type: EQuestionType.Bool,
         followup: {
             question: "Where was this indian burial site?",
@@ -42,7 +42,7 @@ export const Questions: IQuestion[] = [
         type: EQuestionType.Short
     },
     {
-        question: "Do you follow any of the current faiths?",
+        question: "Do you partake any of the following faiths?",
         type: EQuestionType.Multi,
         content: [
             "Flying Spagetti Monster",
@@ -54,7 +54,7 @@ export const Questions: IQuestion[] = [
         ]
     },
     {
-        question: "How many bridges have driven under in the past week?",
+        question: "How many bridges have you driven under in the past week?",
         type: EQuestionType.Numerical
     },
     {
@@ -62,7 +62,7 @@ export const Questions: IQuestion[] = [
         type: EQuestionType.Numerical
     },
     {
-        question: "Are you currently in possession of a umbrella",
+        question: "Are you currently in possession of an umbrella",
         type: EQuestionType.Bool,
         followup: {
             question: "What colours or patterns dose this umbrella posses",
@@ -70,7 +70,7 @@ export const Questions: IQuestion[] = [
         }
     },
     {
-        question: "Have you broken your headlights / any mirrors recently?",
+        question: "Have you broken your headlights or any mirrors recently?",
         type: EQuestionType.Bool,
         followup: {
             question: "How many headlights are broken / mirrors?",
@@ -86,11 +86,11 @@ export const Questions: IQuestion[] = [
         }
     },
     {
-        question: "How many stop signs have you ran over?",
+        question: "How many stop signs have you run over?",
         type: EQuestionType.Numerical,
     },
     {
-        question: "Would you consider your self a bad driver?",
+        question: "Would you consider yourself a bad driver?",
         type: EQuestionType.Bool,
     },
     {
