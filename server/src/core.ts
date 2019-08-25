@@ -54,9 +54,11 @@ if (app.get("env") === "production") {
     app.locals.pretty = true;
 }
 
-// Setting up the routes for the rest of the application
-import routes from "./controllers/routes";
-app.use("/", routes);
+import { AnwserGenerator } from "./content/anwsers";
+app.post("/question", (req: Request, res: Response) => {
+    const result = AnwserGenerator.generator();
+    res.json({ answer: result, quote: (result.length * 1000) });
+});
 
 // The last route run
 import { Request, Response } from "express";
