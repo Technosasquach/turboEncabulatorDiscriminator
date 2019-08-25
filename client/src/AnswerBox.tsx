@@ -1,35 +1,68 @@
 import * as React from "react";
 
 import { NameGen } from "./content/names";
+const axios = require("axios");
 
 import "./AnswerBox.less";
 
-export class AnswerBox extends React.Component<{a: {text: any, quote: any, returnFunc: Function}}, any> {
+export class AnswerBox extends React.Component<{a: {text: any, quote: any, returnFunc: Function, newAnswer: Function}}, {result: {text: string, quote: number}}> {
 
     constructor(props: any) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleNew = this.handleNew.bind(this);
+        this.state = {
+            result: {
+                text: "Loading...",
+                quote: 0
+            }
+        }
+    }
+
+    componentDidMount() {
+        this.requestResult();
     }
 
     handleClick(e: any) {
         this.props.a.returnFunc();
+    }
+    handleNew(e: any) {
+        // this.props.a.newAnswer();
+        this.requestResult();
+    }
+
+    requestResult() {
+        axios.post('/question').then((resp: any) => {
+            this.setState({
+                result: {
+                    text: resp.data.answer,
+                    quote: resp.data.quote
+                }
+            });
+        }).catch(() => {
+            this.requestResult();
+        })
     }
 
     render() {
         return (
             <div className="answerBox">
                 <div className="left">
-                    <span>{this.props.a.text}</span>
+                    <span>{this.state.result.text}</span>
                 </div>
                 <div className="right">
                     <div className="quotePane">
                         <h3>Quotes:</h3>
-                        <QuoteBox quote={this.props.a.quote}/>
-                        <QuoteBox quote={this.props.a.quote}/>
-                        <QuoteBox quote={this.props.a.quote}/>
+                        <QuoteBox quote={this.state.result.quote}/>
+                        <QuoteBox quote={this.state.result.quote}/>
+                        <QuoteBox quote={this.state.result.quote}/>
                     </div>
                 </div>
-                <button className="restart" onClick={this.handleClick}>Restart</button>
+                <div>
+                    <button className="restart" onClick={this.handleNew}>New Answer</button>
+                    <br/>
+                    <button className="restart" onClick={this.handleClick}>Restart</button>
+                </div>
             </div>
         );
     }

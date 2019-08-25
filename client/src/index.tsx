@@ -90,6 +90,8 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
                     quote: resp.data.quote
                 }
             });
+        }).catch(() => {
+            this.requestResult();
         })
     }
 
@@ -120,7 +122,8 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
                     <AnswerBox a={{
                         text: this.state.result.text, 
                         quote: this.state.result.quote,
-                        returnFunc: this.restartQuiz
+                        returnFunc: this.restartQuiz,
+                        newAnswer: this.requestResult
                 }}/> : undefined }
                 { this.state.showPage == 2 ? 
                     <LoadingBox/> : undefined }
