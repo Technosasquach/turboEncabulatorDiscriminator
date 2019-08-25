@@ -91,9 +91,13 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
         })
     }
 
+    restartQuiz() {
+
+    }
+
     render() {
         return (
-            <PageWrapper>
+            <PageWrapper returnFunc={this.restartQuiz}>
                 { this.state.showPage == 1 ? 
                     <QuestionBox a={{ 
                         questionJSON: this.state.question,
