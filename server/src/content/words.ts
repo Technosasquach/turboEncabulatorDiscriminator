@@ -20,7 +20,7 @@ export const WordsTechnoBabbleProNouns: string[] = [
     "Canister", 
     "Capacitor", 
     "Coil", 
-    "Circut", 
+    "Circuit", 
     "Conduit", 
     "Core", 
     "Driver", 
