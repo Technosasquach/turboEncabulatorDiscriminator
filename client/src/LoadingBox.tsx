@@ -41,6 +41,10 @@ export class LoadingBox extends React.Component<any, { percentage: number, text:
     //     console.log("ValuesLength: " + this.values.length);
     // }
 
+    componentDidMount() {
+        this.setState({ text: LoaderMessages.getRandomMessage() + "..." })
+    }
+
     timeOutIndex = setInterval(() => {
         this.nextStep();
     }, 800)

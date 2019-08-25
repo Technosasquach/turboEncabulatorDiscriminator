@@ -20,7 +20,7 @@ export class PageWrapper extends React.Component<{returnFunc: Function}, any> {
                 <div className="pageForeground">
                     <div className="header">
                         <span>Turbo Encabulator Discriminator</span>
-                        <button className="restart">Restart</button>
+                        <button className="restart" >Restart</button>
                     </div>
                 </div>
                 <div className="pageContent">

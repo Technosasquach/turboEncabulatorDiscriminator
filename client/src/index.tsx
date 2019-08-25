@@ -32,6 +32,7 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
         }
         this.finishedQuestion = this.finishedQuestion.bind(this);
         this.finishedLoading = this.finishedLoading.bind(this);
+        this.restartQuiz = this.restartQuiz.bind(this);
     }
 
     componentDidMount() {
@@ -92,7 +93,7 @@ export default class Root extends React.Component<any, {question: IQuestion, cur
     }
 
     restartQuiz() {
-
+        // console.log("Test");
     }
 
     render() {

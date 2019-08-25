@@ -85,7 +85,7 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                     return (
                                         <div className="numericalAnswer">
                                             <form>
-                                                <input type="text" className="numericalQuestion" name="number"/>                                    
+                                                <input type="text" className="numericalQuestion" name="number" placeholder="Enter a number..."/>                                    
                                             </form>
                                         </div>
                                     );
@@ -113,10 +113,8 @@ export class QuestionBox extends React.Component<{ a: {questionJSON: IQuestion, 
                                                         className="form-check-input"
                                                     />
                                                     <span className="checkmark"></span>
-                                        
                                                 </label>
                                             </div>
-
                                             <div className="form-check">
                                                 <label className="container">No
                                                     <input

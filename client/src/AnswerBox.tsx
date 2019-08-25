@@ -44,7 +44,7 @@ export class QuoteBox extends React.Component<{quote: number}, any> {
                 <span>${this.props.quote + Math.floor((Math.random() - 0.5) * (Math.random() * 40000))}</span>
                 <br/>
                 <div className="quoteButton">
-                    <span>Quote Now!</span>
+                    <span>Hire them!</span>
                 </div>
             </div>
         );
