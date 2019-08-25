@@ -56,7 +56,7 @@ export const WordsTechnoBabbleDescription: string[] = [
     "Potted",
     "Electrolydic",
     "Thin film",
-    "Analog", 
+    "Analogue", 
     "Asynchronous", 
     "Real-time", 
     "Nested", 
@@ -253,11 +253,11 @@ export const WordsComputer: string[] = [
 export const Templates: string[] = [
     "The {{{thing}}} sounds like its broken.",
     "The {{{thing}}} sounds like its broken, it might also be the {{{also}}}.",
-    "The {{{thing}}} which runs the {{{thing}}} has interacted with the {{{thing}}} causing a failure in the {{{also}}}",
-    "The {{{thing}}} has interacted with the {{{thing}}} causing a failure in the {{{also}}}",
-    "The {{{thing}}} has interacted with the {{{also}}}",
-    "The {{{thing}}} has interacted with the {{{thing}}}",
-    "The {{{thing}}} has unlatched with the {{{thing}}}",
+    "The {{{thing}}} which runs the {{{thing}}} has interacted with the {{{thing}}} causing a failure in the {{{also}}}.",
+    "The {{{thing}}} has interacted with the {{{thing}}} causing a failure in the {{{also}}}.",
+    "The {{{thing}}} has interacted with the {{{also}}}.",
+    "The {{{thing}}} has interacted with the {{{thing}}}.",
+    "The {{{thing}}} has unlatched with the {{{thing}}}.",
 ]
 
 export const Starters: string[] = [
