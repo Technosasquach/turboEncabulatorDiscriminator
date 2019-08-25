@@ -29,18 +29,18 @@ export const Questions: IQuestion[] = [
             type: EQuestionType.Short
         }
     },
-    {
-        question: "If there is a weird sound, what does it sound like?",
-        type: EQuestionType.Short
-    },
-    {
-        question: "If there is a grinding sound, where is it coming from?",
-        type: EQuestionType.Short
-    },
-    {
-        question: "If there is a strange sound, does it sound like a dead relative?",
-        type: EQuestionType.Short
-    },
+    // {
+    //     question: "If there is a weird sound, what does it sound like?",
+    //     type: EQuestionType.Short
+    // },
+    // {
+    //     question: "If there is a grinding sound, where is it coming from?",
+    //     type: EQuestionType.Short
+    // },
+    // {
+    //     question: "If there is a strange sound, does it sound like a dead relative?",
+    //     type: EQuestionType.Short
+    // },
     {
         question: "Do you partake any of the following faiths?",
         type: EQuestionType.Multi,
@@ -53,10 +53,10 @@ export const Questions: IQuestion[] = [
             "N/A",
         ]
     },
-    {
-        question: "How many bridges have you driven under in the past week?",
-        type: EQuestionType.Numerical
-    },
+    // {
+    //     question: "How many bridges have you driven under in the past week?",
+    //     type: EQuestionType.Numerical
+    // },
     {
         question: "How many black cats have you seen in the past month?",
         type: EQuestionType.Numerical
@@ -89,14 +89,14 @@ export const Questions: IQuestion[] = [
         question: "How many stop signs have you run over?",
         type: EQuestionType.Numerical,
     },
-    {
-        question: "Would you consider yourself a bad driver?",
-        type: EQuestionType.Bool,
-    },
-    {
-        question: "How many accidents have you been in?",
-        type: EQuestionType.Numerical,
-    },
+    // {
+    //     question: "Would you consider yourself a bad driver?",
+    //     type: EQuestionType.Bool,
+    // },
+    // {
+    //     question: "How many accidents have you been in?",
+    //     type: EQuestionType.Numerical,
+    // },
     {
         question: "When did you last check your tire pressure?",
         type: EQuestionType.Multi,
@@ -117,7 +117,7 @@ export const Questions: IQuestion[] = [
         }
     },
     {
-        question: "When did you last check your blinker fluid",
+        question: "When did you last check your headlight fluid",
         type: EQuestionType.Multi,
         content: [
             "Last Day",
@@ -138,6 +138,45 @@ export const Questions: IQuestion[] = [
             "Greater than 10, but less than 50",
             "I'm a monster",
             "None",
+        ]
+    },
+    {
+        question: "Have you been apart of any occult activities",
+        type: EQuestionType.Multi,
+        content: [
+            "I embody Cthulhu",
+            "Only some exorcisms",
+            "None",
+        ]
+    },
+    {
+        question: "What does your car run on?",
+        type: EQuestionType.Multi,
+        content: [
+            "Fission Energy",
+            "Particle Collider",
+            "Flux Capacitor",
+            "Child Labour",
+            "Uni Student Tears"
+        ]
+    },
+    {
+        question: "Have you reversed the polarity recently?",
+        type: EQuestionType.Multi,
+        content: [
+            "Last Day",
+            "Last Fortnight",
+            "Last Season",
+        ]
+    },
+    {
+        question: "Have you administered any chemicals recently?",
+        type: EQuestionType.Multi,
+        content: [
+            "Sodium Petathol",
+            "Steroids",
+            "Class A Drugs",
+            "N/A"
         ]
     }
 ]
