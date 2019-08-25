@@ -30,15 +30,15 @@ export const Questions: IQuestion[] = [
         }
     },
     {
-        question: "If there is a sound, what does it sound like?",
+        question: "If there is a weird sound, what does it sound like?",
         type: EQuestionType.Short
     },
     {
-        question: "If there is a sound, where is it coming from?",
+        question: "If there is a grinding sound, where is it coming from?",
         type: EQuestionType.Short
     },
     {
-        question: "If there is a sound, does it sound like a dead relative?",
+        question: "If there is a strange sound, does it sound like a dead relative?",
         type: EQuestionType.Short
     },
     {
@@ -127,5 +127,21 @@ export const Questions: IQuestion[] = [
             "Still running OEM",
             "Never",
         ]
+    },
+    {
+        question: "Approximately how many people have you hit with your car?",
+        type: EQuestionType.Multi,
+        content: [
+            "1",
+            "Less than 5",
+            "Greater than 5, but less than 10",
+            "Greater than 10, but less than 50",
+            "I'm a monster",
+            "None",
+        ]
+    },
+    {
+        question: "How many times a day do you change radio stations?",
+        type: EQuestionType.Numerical,
     }
 ]
