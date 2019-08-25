@@ -178,5 +178,13 @@ export const Questions: IQuestion[] = [
             "Class A Drugs",
             "N/A"
         ]
+    },
+    {
+        question: "Have you tried turning it off and on again?",
+        type: EQuestionType.Bool
+    },
+    {
+        question: "Have you tried sacrificing your first born son?",
+        type: EQuestionType.Bool
     }
 ]
