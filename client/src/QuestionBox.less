@@ -36,13 +36,13 @@
 }
 
 .currentQuestion {
-    color: @colour-grey;
+    color: average(@colour-main, #ffffff);;
     font-weight: 900;
     flex-grow: 1;
     height: 100%;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: @colour-grey 10px solid;
+    border-bottom: average(@colour-main, #ffffff) 10px solid;
     //text-decoration: underline;
 }
 
@@ -54,7 +54,7 @@
     padding-top: 25px;
     padding-left: 25px;
     padding-right: 25px;
-    border-radius: 10px;
+    border-radius: @size-radius-bg;
 }
 
 .question {
@@ -88,7 +88,7 @@ textarea {
     //box-sizing: border-box;
     //margin: 0px;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: @size-radius;
     border-color: @colour-light;
 }
 
@@ -166,7 +166,7 @@ label {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 16px;
+    border-radius: @size-radius;
     width: 100%;
 
     border: 1px solid @colour-light;
@@ -188,8 +188,8 @@ label {
 // Button
 .btn {
     //position: absolute;
-    border-radius: 4px;
-    background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+    border-radius: @size-radius;
+    background: linear-gradient(to bottom, @colour-main, darken(@colour-main, 5%)) !important;
     border: none;
     color: #FFFFFF;
     text-align: center;

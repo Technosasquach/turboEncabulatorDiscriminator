@@ -81,15 +81,13 @@
             padding: 0.7rem;
             margin-top: 0.6rem;
             text-align: center;
+            border-radius: 5px;
 
             &:hover {
                 background: darken(white, 3);
             }
 
-            background: #ffffff; /* Old browsers */
-            background: -moz-linear-gradient(top, #ffffff 0%, darken(white, 2) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, #ffffff 0%, darken(white, 2) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, #ffffff 0%, darken(white, 2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: linear-gradient(to bottom, @colour-main, darken(@colour-main, 5%)) !important;
         }
     }
 }
