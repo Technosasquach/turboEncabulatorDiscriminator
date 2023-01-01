@@ -34,7 +34,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7",
     "less": "^3.0.2",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
@@ -61,11 +61,11 @@
     "compression": "^1.7.2",
     "concurrently": "^3.6.1",
     "cookie-parser": "^1.4.3",
-    "css-loader": "^0.28.11",
+    "css-loader": "^6.7.3",
     "errorhandler": "^1.5.0",
     "express": "^4.16.3",
     "install": "^0.11.0",
-    "less-loader": "^4.1.0",
+    "less-loader": "^11.1.0",
     "log-update": "^3.2.0",
     "lusca": "^1.5.2",
     "morgan": "^1.9.0",
@@ -75,10 +75,10 @@
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.3",
-    "ts-loader": "^4.1.0",
-    "webpack": "^4.11.0",
-    "webpack-cli": "^3.1.1"
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
